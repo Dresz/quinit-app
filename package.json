@@ -1,0 +1,29 @@
+{
+  "name": "quinit-app",
+  "version": "1.0.0",
+  "description": "quinit test jenkins",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "qunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dresz/quinit-app.git"
+  },
+  "keywords": [
+    "quinit",
+    "test"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dresz/quinit-app/issues"
+  },
+  "homepage": "https://github.com/Dresz/quinit-app#readme",
+  "dependencies": {
+    "qunit": "^2.9.3"
+  }
+}
