@@ -11,6 +11,7 @@ Cuenta = function (nocuenta, nombre, apellido, dpi, saldoini, correo, contra) {
   this.dpi = dpi;
   this.saldoini = saldoini;
   this.correo = correo;
+  this.contra=contra;
 }
 
 function transferir(cuentaTransfiere, cuentaRecibe, montoTransferir) {
