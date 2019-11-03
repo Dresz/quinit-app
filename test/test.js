@@ -133,6 +133,9 @@ function simularbddpi(dpi,cuenta1,cuenta2,cuenta3){
         return false
     }
 
+  
+
+
 QUnit.test('Crear Cuenta con DPI ya asignado', function (assert) {
     let cuenta1 = new Cuenta(1, "Juan", "Pérez", 3297999401108, 11.00, "juan@gmail.com", "juan123");
     let cuenta2 = new Cuenta(2, "Pedro", "Paz", 3297999401105, 0.00, "pedro@gmail.com", "pedro123");
@@ -232,21 +235,35 @@ QUnit.test('Crear Cuenta con DPI ya asignado', function (assert) {
   });
 
 /* Prueba de Perfil */
-QUnit.test('Acceso a los componentes de la pagina', function (assert) {
-  document.getElementById('cuenta').innerText=29781;
-  let cuenta = document.getElementById('cuenta').innerText;    
-  let resultadoEsperado = 29781;
 
-  assert.equal(cuenta, resultadoEsperado, "Se accede correctamente");
+function simularDisenoPagina(nombre,apellido,cuenta,saldo,correo){
+  this.nombre=nombre;
+  this.apellido=apellido;
+  this.cuenta=cuenta;
+  this.saldo=saldo;
+  this.correo=correo;      
+}
+
+function simularVariablesDeSesion(value){
+    this.key = value;
+}
+
+QUnit.test('Acceso a los componentes de la pagina', function (assert) {
+  let cuenta = new Cuenta(1, "Juan", "Pérez", 3297999401108, 11.00, "juan@gmail.com", "juan123");
+  let pagina = new simularDisenoPagina(cuenta.nombre,cuenta.apellido,cuenta.nocuenta,cuenta.saldoini,cuenta.correo);    
+  let result = pagina.nombre;
+  let expected = cuenta.nombre;
+  console.log(result)
+  assert.equal(result, expected, "Se accede correctamente");
 });
 
 QUnit.test('Testing usuario Loggeado', function (assert) {
-    
-  sessionStorage.setItem('cuenta',25467);
-  let logueado = sessionStorage.getItem('cuenta');
-  let resultadoEsperado = 25467;
-  sessionStorage.clear();
+  let sessionStorage = new simularVariablesDeSesion(25467);
+  let sessionStorage2 = new simularVariablesDeSesion("Juan");  
+  let cuenta = sessionStorage.key;
+  let user = sessionStorage2.key;
+  let result = cuenta==25467 && user=="Juan"
 
-  assert.equal(logueado, resultadoEsperado, "Se guardan las variables de sesion");
+  assert.ok(result, "Se guardan las variables de sesion");
 });
 
