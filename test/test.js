@@ -230,3 +230,23 @@ QUnit.test('Crear Cuenta con DPI ya asignado', function (assert) {
 
     assert.ok(simularbd(userlog,passlog,cuenta1,cuenta2,cuenta3), "Ingreso correcto");
   });
+
+/* Prueba de Perfil */
+QUnit.test('Acceso a los componentes de la pagina', function (assert) {
+  document.getElementById('cuenta').innerText=29781;
+  let cuenta = document.getElementById('cuenta').innerText;    
+  let resultadoEsperado = 29781;
+
+  assert.equal(cuenta, resultadoEsperado, "Se accede correctamente");
+});
+
+QUnit.test('Testing usuario Loggeado', function (assert) {
+    
+  sessionStorage.setItem('cuenta',25467);
+  let logueado = sessionStorage.getItem('cuenta');
+  let resultadoEsperado = 25467;
+  sessionStorage.clear();
+
+  assert.equal(logueado, resultadoEsperado, "Se guardan las variables de sesion");
+});
+
