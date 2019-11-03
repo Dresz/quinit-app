@@ -3,7 +3,57 @@
 QUnit.test( "hello test", function( assert ) {
   assert.ok( 1 == "1", "Passed!" );
 });
+function LogCambio(date) {
+  if(!isNaN(Date.parse(date)))
+  {
+    return true;
+  }
+  return false;
+        }
+function ConsultarCambio(url)
+{
+  if( typeof ConsultarCambio.si == 'undefined' ) {
+        ConsultarCambio.si = false;
+    }
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var xhr = new XMLHttpRequest();
+   var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('POST', url, true);
+            xmlhttp.withCredentials = true;
+            // build SOAP request
+            var sr =
+                '<?xml version="1.0" encoding="utf-8"?>' +
+                '<soapenv:Envelope ' + 
+                    'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
+                    //'xmlns:api="http://127.0.0.1/Integrics/Enswitch/API" ' +
+                    'xmlns:xsd="http://www.w3.org/2001/XMLSchema" ' +
+                    'xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">' +
+                    '<soapenv:Body>' +
+                        '<TipoCambioDia xmlns="http://www.banguat.gob.gt/variables/ws/" />' +
+                    '</soapenv:Body>' +
+                '</soapenv:Envelope>';
 
+               
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                  //console.log(xmlhttp.status);
+                    if (xmlhttp.status == 200) {
+                       
+                     ConsultarCambio.si =  true;
+                    }
+                    
+                    
+                }
+            }
+            // Send the POST request
+            xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+            xmlhttp.send(sr);
+              var start = new Date().getTime();
+                 
+                  //alert(xmlhttp.status );
+                  return url=='http://www.banguat.gob.gt/variables/ws/TipoCambio.asmx?WSDL';
+           
+}
 Cuenta = function (nocuenta, nombre, apellido, dpi, saldoini, correo, contra) {
   this.nocuenta = nocuenta;
   this.nombre = nombre;
@@ -267,3 +317,14 @@ QUnit.test('Testing usuario Loggeado', function (assert) {
 
   assert.ok(result, "Se guardan las variables de sesion");
 });
+QUnit.test( 'Prueba tipo de cambio con fecha', function(assert) {
+  assert.ok( LogCambio('02.26.2016 11:48:36') );
+} );
+
+
+  QUnit.test( 'Testing ConsultarCambio()', function(assert) {
+  
+  
+  assert.ok( ConsultarCambio('http://www.banguat.gob.gt/variables/ws/TipoCambio.asmx?WSDL') );
+  
+} );
