@@ -1,0 +1,6 @@
+Pruebas Unitarias/debug.log
+sitioweb/debug.log
+node_modules
+*.log
+
+.scannerwork/

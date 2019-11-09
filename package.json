@@ -1,31 +1,27 @@
 {
-  "name": "quinit-app",
+  "name": "ads1-practica_3-4",
   "version": "1.0.0",
-  "description": "quinit test jenkins",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "",
+  "main": "cliente.js",
   "scripts": {
-    "test": "qunit"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dresz/quinit-app.git"
+    "url": "git+https://github.com/FherHerand/ads1-practica_3-4.git"
   },
-  "keywords": [
-    "quinit",
-    "test"
-  ],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Dresz/quinit-app/issues"
+    "url": "https://github.com/FherHerand/ads1-practica_3-4/issues"
   },
-  "homepage": "https://github.com/Dresz/quinit-app#readme",
+  "homepage": "https://github.com/FherHerand/ads1-practica_3-4#readme",
   "dependencies": {
-    "moment": "^2.24.0",
-    "qunit": "^2.9.3",
-    "xmlhttprequest": "^1.8.0"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "cypress": "^3.5.0"
   }
 }

@@ -1,0 +1,27 @@
+Para usar cypress es ncesario hacer un cd a la carpeta del proyecto
+y luego instalamos cypress con el comando:
+
+>>> npm install cypress --save-dev
+
+una vez instalado podemos ejecutarlo con el comando:
+
+>>> ./node_modules/.bin/cypress open
+
+ya corriendo se nos mostrara una ventana en la cual se pueden ver
+los test funcionalies creados en este caso el archivo:
+
+windows: \cypress\integration\practica4\funcionales.spec.js
+linux: /cypress/integration/practica4/funcionales.spec.js
+
+en ese archivo se encuentra el proceso a seguir para ejecutar la
+prueba funcional de cada funcionalidad de la practica.La ruta base 
+se pueden encontrar en el archivo cypress.json.
+
+
+documentacion de cypress js:
+
+https://docs.cypress.io/guides/getting-started/installing-cypress.html#Opening-Cypress
+
+https://docs.cypress.io/api/cypress-api/custom-commands.html#Syntax
+
+https://docs.cypress.io/api/commands/get.html#Syntax

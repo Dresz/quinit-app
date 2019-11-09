@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>Banco de Guatemala</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <!--########script para funcionalidades########-->
+    <script src="../layout/scripts/funcionalidades.js"></script>
+  </head>
+  <body id="top" >
+
+    <div class="wrapper row1">
+      <header id="header" class="hoc clear">
+        <div id="logo" class="fl_left">
+          <h1>Banco de Guatemala</h1>
+        </div>
+        <div id="quickinfo" class="fl_right">
+          <ul class="nospace inline">
+            <li><a href="login.html"><input type="button" value="LogIn" class="btn"></a></li>
+          </ul>
+        </div>
+      </header>
+    </div>
+    <!--###################################___REGISTRO___##########################################-->
+    <div class="wrapper row3">
+      <main class="hoc container clear">
+        <div class="sectiontitle">
+          <h6 class="heading">Registro</h6>
+          <p>Cree su propia cuenta para iniciar esta nueva experiencia virtual.</p>
+        </div>
+        <ul class="nospace group">
+          <li class="one_third">
+            
+            <article>
+                <p class="heading font-x1">DPI</p>
+                <input type="text" id="dpitext" class="btn">
+            </article>
+            <br>
+            <article>
+              <p class="heading font-x1">Nombre</p>
+              <input type="text" id="nombretext" class="btn">
+            </article>
+            <br>
+            <article>
+                <p class="heading font-x1">Apellido</p>
+                <input type="text" id="apellidotext" class="btn">
+            </article>
+            <br>
+            <article>
+                <p class="heading font-x1">Correo</p>
+                <input type="text" id="correotext" class="btn">
+            </article>
+            <br>
+            <article>
+                <p class="heading font-x1">Password</p>
+                <input type="password" id="passtext" class="btn">
+            </article>
+            <br>
+            <article>
+                <p class="heading font-x1">Confirmar Password</p>
+                <input type="password" id="passconftext" class="btn">
+            </article>
+            <br>
+            
+            <input type="button" id="crearcuenta" value="Crear Cuenta" class="btn" onclick="crearcuenta()">
+          </li>
+
+          
+        </ul>
+        
+        <div class="clear"></div>
+      </main>
+    </div>
+    <!--##################################################################################################-->
+
+
+    <div class="wrapper bgded overlay" style="background-image:url('../images/banco.jpg');">
+      <section class="hoc container clear">
+        <ul id="stats" class="nospace group">
+        </ul>
+      </section>
+    </div>
+
+
+    <div class="wrapper row5">
+      <div id="copyright" class="hoc clear">
+        <p class="fl_left">Copyright &copy; Todos los derechos reservados.</p>
+      </div>
+    </div>
+
+
+    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
+
+    <!-- JAVASCRIPTS -->
+    <script src="../layout/scripts/jquery.min.js"></script>
+    <script src="../layout/scripts/jquery.backtotop.js"></script>
+    <script src="../layout/scripts/jquery.mobilemenu.js"></script>
+    <script src="../layout/scripts/jquery.flexslider-min.js"></script>
+  </body>
+</html>
