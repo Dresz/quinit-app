@@ -318,7 +318,7 @@ QUnit.test('Testing usuario Loggeado', function (assert) {
   assert.ok(result, "Se guardan las variables de sesion");
 });
 QUnit.test( 'Prueba tipo de cambio con fecha', function(assert) {
-  assert.ok( LogCambio('02.26.2016 11:48:36') );
+  assert.notOk( LogCambio('02.26.2016 11:48:36') );
 } );
 
 
